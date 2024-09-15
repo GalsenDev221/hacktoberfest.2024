@@ -1,76 +1,79 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { IoClose, IoMenu } from "react-icons/io5";
+import { HiOutlineCode } from "react-icons/hi";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-  };
-
   return (
-    <header className="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm backdrop-filter backdrop-blur-lg bg-opacity-30">
-      <nav className="mt-4 relative max-w-2xl w-full border border-silver dark:border-raisin rounded-[2rem] mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto">
-        <div className="px-4 md:px-0 flex justify-between items-center">
-          <div>
-            <Link
-              className="flex-none rounded-md text-xl inline-block focus:outline-none focus:opacity-80"
-              href="/"
-            >
-              <Image
-                src="/img/logo.webp"
-                alt="Daooda Logo"
-                width={35}
-                height={35}
-              />
-            </Link>
+    <header className="bg-neutral-900">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <div className="md:flex md:items-center md:gap-12">
+            <a className="block text-green-500" href="#">
+              <span className="sr-only">Home</span>
+              <HiOutlineCode />
+            </a>
           </div>
 
-          <div className="md:hidden">
-            <button
-              type="button"
-              className="flex justify-center items-center size-6 border border-silver text-raisin rounded-full focus:outline-none focus:bg-silver dark:border-raisin dark:text-snow dark:hover:bg-silver dark:focus:bg-raisin"
-              onClick={toggleMenu}
-              aria-expanded={menuOpen}
-              aria-controls="navbar-menu"
-              aria-label="Toggle navigation"
-            >
-              {menuOpen ? (
-                <span className="shrink-0 size-4">
-                  <IoClose />
-                </span>
-              ) : (
-                <span className="shrink-0 size-3.5">
-                  <IoMenu />
-                </span>
-              )}
-            </button>
+          <div className="hidden md:block">
+            <nav aria-label="Global">
+              <ul className="flex items-center gap-6 text-sm">
+                <li>
+                  <a
+                    className="rounded-md bg-neutral-800 hover:bg-neutral-700 px-5 py-2.5 text-sm font-medium text-green-500"
+                    href="#"
+                  >
+                    A Propos
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="rounded-md bg-neutral-800 hover:bg-neutral-700 px-5 py-2.5 text-sm font-medium text-green-500"
+                    href="#"
+                  >
+                    Speakers
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="rounded-md bg-neutral-800 hover:bg-neutral-700 px-5 py-2.5 text-sm font-medium text-green-500"
+                    href="#"
+                  >
+                    Programmes
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
-        </div>
 
-        <div
-          id="navbar-menu"
-          className={`overflow-hidden transition-all duration-300 md:block ${
-            menuOpen ? "block" : "hidden"
-          }`}
-        >
-          <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
-            <Link
-              className="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-4 border-raisin font-extrabold text-night hover:text-raisin focus:outline-none dark:border-snow dark:text-snow"
-              href="#"
-            >
-              Speakers
-            </Link>
-            <Link
-              className="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-4 border-raisin font-extrabold text-night hover:text-raisin focus:outline-none dark:border-snow dark:text-snow"
-              href="#"
-            >
-              Programmes
-            </Link>
+          <div className="flex items-center gap-4">
+            <div className="sm:flex sm:gap-4">
+              <a
+                className="rounded-md bg-green-500 px-5 py-2.5 text-sm font-medium text-gray-200 shadow hover:text-gray-300"
+                href="#"
+              >
+                S&apos;inscrire
+              </a>
+            </div>
+
+            <div className="block md:hidden">
+              <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };
