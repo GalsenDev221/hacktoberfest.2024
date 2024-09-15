@@ -1,16 +1,11 @@
 import Head from "next/head";
-import localFont from "next/font/local";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Speakers from "@/components/Speakers";
+import Program from "@/components/Program";
 
 export default function Home() {
   return (
@@ -18,15 +13,12 @@ export default function Home() {
       <Head>
         <title>Hacktoberfest 2024</title>
       </Head>
-      <div
-        className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-      >
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-          <p className="text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-            Hacktoberfest 2024
-          </p>
-        </main>
-      </div>
+      <Navbar />
+      <Hero />
+      <About />
+      <Speakers />
+      <Program />
+      <Footer />
     </>
   );
 }
