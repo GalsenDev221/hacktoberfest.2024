@@ -1,0 +1,27 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
+    font-display: swap;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/SpaceGrotesk-Medium.woff2') format('woff2');
+    font-display: swap;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  body {
+    @apply font-sans bg-black text-light;
+  }
+}
