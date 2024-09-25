@@ -1,7 +1,13 @@
-<script>
+<script lang="ts">
+	import type { PageData } from './$types';
 	import GalsenDev from '$lib/components/icons/galsen-dev.svelte';
 	import LogoMark from '$lib/components/icons/logo-mark.svelte';
 	import Logo from '$lib/components/icons/logo.svelte';
+	import Speaker from '$lib/components/ui/speaker.svelte';
+	import Countdown from '$lib/components/ui/countdown.svelte';
+
+	export let data: PageData;
+	$: ({ speakers } = data);
 </script>
 
 <header class="container mx-auto p-4 sm:py-6">
@@ -33,7 +39,9 @@
 			<p class="mt-4 text-center lg:text-left">
 				Cette annee rejoignez <span class="text-green">Galsen Dev</span> pour celebrer l'open source
 			</p>
-			<div class="mt-8 flex h-20 items-center justify-center bg-green"></div>
+			<div class="mt-8">
+				<Countdown />
+			</div>
 		</div>
 	</section>
 
@@ -50,22 +58,8 @@
 		<ul
 			class="mx-auto grid max-w-sm grid-cols-1 items-center gap-6 sm:max-w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
 		>
-			{#each Array(10) as _}
-				<li>
-					<!-- TODO: make this a component that accepts the infos as props -->
-					<article class="">
-						<div
-							id="avatar-here"
-							class="aspect-video rounded-lg bg-pink-light sm:aspect-square"
-						></div>
-						<div class="mt-4 space-y-1 overflow-hidden">
-							<h3 class="truncate text-lg font-medium leading-none" title="Modou Fall">
-								Modou Fall
-							</h3>
-							<p class="text-green">Frontend Developer</p>
-						</div>
-					</article>
-				</li>
+			{#each speakers as speaker}
+				<li><Speaker {speaker} /></li>
 			{/each}
 		</ul>
 	</section>
