@@ -1,7 +1,8 @@
+import type { Speaker } from "$lib/types";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = () => {
-  const speakers = [
+  const speakers: Speaker[] = [
     {
       photo: 'https://avatars.githubusercontent.com/u/20214420?v=4',
       name: 'Daoouda Ba',

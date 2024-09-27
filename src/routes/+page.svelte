@@ -58,7 +58,7 @@
 		<ul
 			class="mx-auto grid max-w-sm grid-cols-1 items-center gap-6 sm:max-w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
 		>
-			{#each speakers as speaker}
+			{#each speakers as speaker, i (i)}
 				<li><Speaker {speaker} /></li>
 			{/each}
 		</ul>

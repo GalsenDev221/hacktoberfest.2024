@@ -2,18 +2,7 @@
 	import Linkedin from '$lib/components/icons/linkedin.svelte';
 	import TwitterX from '$lib/components/icons/twitter-x.svelte';
 	import Github from '$lib/components/icons/github.svelte';
-
-	type Social = {
-		name: 'linkedin' | 'github' | 'twitter';
-		href: string;
-	};
-
-	type Speaker = {
-		photo?: string;
-		name: string;
-		role: string;
-		socials?: Social[];
-	};
+	import type { Speaker } from '$lib/types';
 
 	export let speaker: Speaker;
 
