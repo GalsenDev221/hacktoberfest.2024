@@ -28,23 +28,23 @@
 	{#if isPastDue}
 		<p>LFG</p>
 	{:else}
-		<dl class="flex items-start justify-center gap-8 lg:justify-start">
-			<div class="grid justify-center gap-1">
-				<dt class="text-center text-4xl font-medium text-white">
+		<dl class="flex items-start justify-center gap-5 lg:justify-start">
+			<div class="space-y-1 text-center">
+				<dt class="text-4xl font-medium text-white">
 					{remainingDays.toString().padStart(2, '0')}
 				</dt>
 				<dd class="text-sm capitalize tracking-widest text-green">Jours</dd>
 			</div>
 			<p class="text-4xl font-medium">:</p>
-			<div class="grid justify-center gap-1">
-				<dt class="text-center text-4xl font-medium text-white">
+			<div class="space-y-1 text-center">
+				<dt class="text-4xl font-medium text-white">
 					{remainingHours.toString().padStart(2, '0')}
 				</dt>
 				<dd class="text-sm capitalize tracking-widest text-green">Heures</dd>
 			</div>
 			<p class="text-4xl font-medium">:</p>
-			<div class="grid justify-center gap-1">
-				<dt class="text-center text-4xl font-medium text-white">
+			<div class="space-y-1 text-center">
+				<dt class="text-4xl font-medium text-white">
 					{remainingMinutes.toString().padStart(2, '0')}
 				</dt>
 				<dd class="text-sm capitalize tracking-widest text-green">Mins</dd>
