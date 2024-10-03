@@ -10,3 +10,8 @@ export type Speaker = {
   socials?: Social[];
 };
 
+export type Schedule = {
+  title: string;
+  time: string;
+  speaker?: string
+}

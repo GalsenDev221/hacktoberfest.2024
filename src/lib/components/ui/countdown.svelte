@@ -16,10 +16,16 @@
 	$: remainingDays = Math.floor(remaining / DAYS);
 	$: remainingHours = Math.floor((remaining % DAYS) / HOURS);
 	$: remainingMinutes = Math.floor((remaining % HOURS) / MINUTES);
-	// $: remainingSeconds = Math.floor((remaining % MINUTES) / SECONDS);
+	$: remainingSeconds = Math.floor((remaining % MINUTES) / SECONDS);
 
-	$: if (Math.floor(remaining / SECONDS) <= 0) clearInterval(interval);
 	$: isPastDue = remaining < 0;
+	$: if (Math.floor(remaining / SECONDS) <= 0) clearInterval(interval);
+	$: countdownMap = [
+		{ label: 'Jours', value: remainingDays },
+		{ label: 'Heures', value: remainingHours },
+		{ label: 'Minutes', value: remainingMinutes },
+		// { label: 'Secondes', value: remainingSeconds }
+	];
 </script>
 
 <article>
@@ -29,26 +35,16 @@
 		<p>LFG</p>
 	{:else}
 		<dl class="flex items-start justify-center gap-5 lg:justify-start">
-			<div class="space-y-1 text-center">
-				<dt class="text-4xl font-medium text-white">
-					{remainingDays.toString().padStart(2, '0')}
-				</dt>
-				<dd class="text-sm capitalize tracking-widest text-green">Jours</dd>
-			</div>
-			<p class="text-4xl font-medium">:</p>
-			<div class="space-y-1 text-center">
-				<dt class="text-4xl font-medium text-white">
-					{remainingHours.toString().padStart(2, '0')}
-				</dt>
-				<dd class="text-sm capitalize tracking-widest text-green">Heures</dd>
-			</div>
-			<p class="text-4xl font-medium">:</p>
-			<div class="space-y-1 text-center">
-				<dt class="text-4xl font-medium text-white">
-					{remainingMinutes.toString().padStart(2, '0')}
-				</dt>
-				<dd class="text-sm capitalize tracking-widest text-green">Mins</dd>
-			</div>
+			{#each countdownMap as { label, value }, i (i)}
+				<div class="space-y-1 text-center">
+					<dt class="text-4xl font-medium text-white">{value.toString().padStart(2, '0')}</dt>
+					<dd class="text-sm capitalize tracking-widest text-green">{label}</dd>
+				</div>
+
+				{#if i < countdownMap.length - 1}
+					<p class="text-4xl font-medium">:</p>
+				{/if}
+			{/each}
 		</dl>
 	{/if}
 </article>

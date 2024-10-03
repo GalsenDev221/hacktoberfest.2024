@@ -7,7 +7,7 @@
 	import Countdown from '$lib/components/ui/countdown.svelte';
 
 	export let data: PageData;
-	$: ({ speakers } = data);
+	$: ({ speakers, schedule } = data);
 </script>
 
 <header class="container mx-auto p-4 sm:py-6">
@@ -46,9 +46,27 @@
 	</section>
 
 	<!-- NOTE: about the event SECTION -->
-	<section class="my-10 h-40 bg-green-light">
-		<div class="container flex h-full items-center justify-center">
-			<h2 class="text-black">About us here</h2>
+	<section class="relative my-10 bg-green">
+		<div class="absolute inset-x-0 h-[140px] bg-black sm:h-[225px] lg:h-20"></div>
+		<div class="absolute inset-x-0 bottom-0 bg-black lg:h-20"></div>
+
+		<div class="container mx-auto items-center justify-between px-4 pb-8 lg:flex lg:py-8">
+			<div class="relative overflow-hidden rounded-lg lg:w-[450px] xl:w-[500px]">
+				<img
+					class="h-[280px] w-full object-cover object-bottom sm:h-[450px] lg:h-[500px] lg:object-right"
+					src="/hero.png"
+					alt="Hacktoberfest 2023"
+				/>
+				<div class="pointer-events-none absolute inset-0 bg-green/45 mix-blend-multiply"></div>
+			</div>
+			<div class="mt-4 lg:order-first lg:mt-0 lg:max-w-md">
+				<h2 class="text-2xl font-medium text-black">Hacktoberfest</h2>
+				<p class="mt-2 text-black">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni blanditiis veniam saepe,
+					deserunt sunt vel fuga quis ipsum cumque commodi asperiores corporis veritatis accusantium
+					quae! Similique est autem nobis vero.
+				</p>
+			</div>
 		</div>
 	</section>
 
@@ -65,34 +83,33 @@
 	</section>
 
 	<!-- NOTE: agenda SECTION -->
-	<section class="container mx-auto space-y-8 px-4 py-10">
-		<h2 class="text-xl font-medium">Programme</h2>
+	<section class="container mx-auto grid grid-cols-1 gap-8 px-4 py-10 lg:grid-cols-5">
+		<div class="col-span-2">
+			<h2 class="text-xl font-medium">Programme</h2>
+
+			<div class="mt-20 hidden lg:block">
+				<p>Illustration ici</p>
+			</div>
+		</div>
 
 		<ul
-			class="divide-y-[3px] divide-dashed divide-light/50 border-y-[3px] border-dashed border-light/50"
+			class="col-span-3 divide-y-[3px] divide-dashed divide-light/50 border-y-[3px] border-dashed border-light/50"
 		>
-			<li class="py-8">
-				<!-- TODO: make this a component that accepts the infos as props -->
-				<article class="grid grid-cols-1 items-center gap-4 sm:grid-cols-[200px_1fr]">
-					<h3 class="text-xl font-medium leading-none text-green">08:00</h3>
-					<div class="space-y-1">
-						<h4 class="truncate text-lg font-medium" title="Mise en place">Mise en place</h4>
-						<!-- <p>Modou FALL</p> -->
-					</div>
-				</article>
-			</li>
-
-			<li class="py-8">
-				<article class="grid grid-cols-1 items-center gap-4 sm:grid-cols-[200px_1fr]">
-					<h3 class="text-xl font-medium leading-none text-green">08:00</h3>
-					<div class="space-y-1 overflow-hidden">
-						<h4 class="truncate text-lg font-medium" title="Presentation #1">
-							Presentation #1asdfsadfdsafdddddddddddddddddddddddddddddddd
-						</h4>
-						<p>Modou FALL</p>
-					</div>
-				</article>
-			</li>
+			{#each schedule as { title, time, speaker } (title)}
+				<li class="flex h-32 items-center sm:h-24">
+					<article class="grid grid-cols-1 items-center gap-2 sm:grid-cols-[200px_1fr]">
+						<h3 class="text-xl font-medium leading-none text-green">{time}</h3>
+						<div class="space-y-1 overflow-hidden">
+							<h4 class="truncate text-lg font-medium" {title}>
+								{title}
+							</h4>
+							{#if speaker}
+								<p class="text-beige">{speaker}</p>
+							{/if}
+						</div>
+					</article>
+				</li>
+			{/each}
 		</ul>
 	</section>
 </main>
