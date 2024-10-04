@@ -2,22 +2,12 @@
 	import type { PageData } from './$types';
 	import GalsenDev from '$lib/components/icons/galsen-dev.svelte';
 	import LogoMark from '$lib/components/icons/logo-mark.svelte';
-	import Logo from '$lib/components/icons/logo.svelte';
 	import Speaker from '$lib/components/ui/speaker.svelte';
 	import Countdown from '$lib/components/ui/countdown.svelte';
 
 	export let data: PageData;
 	$: ({ speakers, schedule } = data);
 </script>
-
-<header class="container mx-auto p-4 sm:py-6">
-	<nav class="flex items-center justify-between">
-		<Logo />
-		<button class="text-dark bg-green px-5 py-3 font-medium text-black hover:bg-green-light">
-			Participer
-		</button>
-	</nav>
-</header>
 
 <main>
 	<h1 class="sr-only">GalsenDev x Hacktoberfest 2024</h1>
@@ -83,17 +73,11 @@
 	</section>
 
 	<!-- NOTE: agenda SECTION -->
-	<section class="container mx-auto grid grid-cols-1 gap-8 px-4 py-10 lg:grid-cols-5">
-		<div class="col-span-2">
-			<h2 class="text-xl font-medium">Programme</h2>
-
-			<div class="mt-20 hidden lg:block">
-				<p>Illustration ici</p>
-			</div>
-		</div>
+	<section class="container mx-auto px-4 py-10">
+		<h2 class="text-xl font-medium">Programme</h2>
 
 		<ul
-			class="col-span-3 divide-y-[3px] divide-dashed divide-light/50 border-y-[3px] border-dashed border-light/50"
+			class="mt-8 divide-y-[3px] divide-dashed divide-light/50 border-y-[3px] border-dashed border-light/50"
 		>
 			{#each schedule as { title, time, speaker } (title)}
 				<li class="flex h-32 items-center sm:h-24">
@@ -111,5 +95,43 @@
 				</li>
 			{/each}
 		</ul>
+	</section>
+
+	<!-- NOTE: sponsors SECTION -->
+	<section class="container mx-auto px-4 py-10">
+		<h2 class="sr-only">Sponsors</h2>
+
+		<article>
+			<h3 class="text-2xl font-medium">Sponsor vedette</h3>
+			<div
+				class="mt-6 grid grid-cols-1 justify-between gap-6 rounded-lg bg-green p-8 lg:grid-flow-col lg:items-end"
+			>
+				<div class="text-black lg:max-w-sm">
+					<!-- <h3 class="mb-2 text-2xl font-medium">Socium Job</h3> -->
+					<p>
+						Socium connecte les talents du monde entier aux entreprises africaines, offrant la
+						promotion de la marque employeur, une gestion complète des processus de recrutement et
+						l'accès à un large bassin de talents.
+					</p>
+				</div>
+
+				<div class="mt-">
+					<img src="/sponsor--socium-job.png" alt="sponsor xarala" />
+				</div>
+			</div>
+		</article>
+
+		<article class="mt-8">
+			<h3 class="text-xl font-medium">Autres sponsors</h3>
+			<ul class="mt-6 flex flex-wrap items-center items-center justify-center gap-x-10 gap-y-12">
+				{#each Array(6) as _}
+					<li class="flex-none">
+						<a href="https://xarala.co" target="_blank">
+							<img src="/sponsor--xarala.png" alt="sponsor xarala" />
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</article>
 	</section>
 </main>
