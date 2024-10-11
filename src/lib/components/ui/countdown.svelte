@@ -24,7 +24,7 @@
 		{ label: 'Jours', value: remainingDays },
 		{ label: 'Heures', value: remainingHours },
 		{ label: 'Minutes', value: remainingMinutes },
-		// { label: 'Secondes', value: remainingSeconds }
+		{ label: 'Secondes', value: remainingSeconds }
 	];
 </script>
 

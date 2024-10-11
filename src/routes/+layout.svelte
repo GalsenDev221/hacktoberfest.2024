@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Hacktoberfest 2024 | GalsenDEV</title>
+	<title>Hacktoberfest 2024 | Galsen DEV</title>
 	<!-- TODO: Add Open Graph -->
 	<!-- TODO: Add Twitter Card -->
 	<!-- TODO: Add Facebook Open Graph -->
@@ -37,6 +37,6 @@
 	<span>Tous droits réservés, 2024</span>
 	<span>
 		Made with ❤️ by
-		<a class="underline" href="https://galsen.dev" target="_blank">GalsenDEV</a>
+		<a class="underline" href="https://galsen.dev" target="_blank">Galsen DEV</a>
 	</span>
 </footer>
