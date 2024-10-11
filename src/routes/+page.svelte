@@ -11,7 +11,7 @@
 </script>
 
 <main>
-	<h1 class="sr-only">GalsenDev x Hacktoberfest 2024</h1>
+	<h1 class="sr-only">Galsen DEV x Hacktoberfest 2024</h1>
 
 	<SectionHero />
 	<SectionAbout />

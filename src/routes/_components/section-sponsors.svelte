@@ -22,21 +22,21 @@
 				</p>
 			</div>
 
-			<img src="/sponsor--socium-job.png" alt="sponsor xarala" />
+			<img src="/sponsor-socium-job.webp" alt="sponsor xarala" />
 		</div>
 	</article>
 
 	<article class="mt-12">
 		<h3 class="text-xl font-medium">Partenaires</h3>
-		<ul class="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-12">
+		<ul class="mt-6 flex flex-wrap justify-start gap-x-10 gap-y-12">
 			<li class="flex-none">
 				<a href="https://xarala.co" target="_blank">
-					<img src="/sponsor--xarala.png" alt="sponsor xarala" />
+					<img class="h-12" src="/partner-xarala.webp" alt="sponsor xarala" />
 				</a>
 			</li>
 			<li class="flex-none">
-				<a href="https://xarala.co" target="_blank">
-					<img src="/sponsor--xarala.png" alt="sponsor xarala" />
+				<a href="https://dakar.impacthub.net" target="_blank">
+					<img class="h-12" src="/partner-impact-hub-dakar.webp" alt="sponsor xarala" />
 				</a>
 			</li>
 		</ul>

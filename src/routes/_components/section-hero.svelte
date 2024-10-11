@@ -19,12 +19,14 @@
 			<span class="text-green">Galsen DEV</span>
 		</h2>
 		<p class="mt-4 text-center lg:text-left">
-			Cette annee rejoignez <span class="text-green">Galsen Dev</span> pour celebrer l'open source.
+			Cette annee rejoignez <span class="text-green"
+				><a href="https://galsen.dev" target="_blank">Galsen DEV</a></span
+			> pour celebrer l'open source.
 		</p>
 
 		<p class="mt-2 flex items-center justify-center gap-2 text-green lg:justify-start">
 			<Map />
-			Impact Hub Dakar
+			<a href="https://maps.app.goo.gl/B5JnLpdeZNSW1oTd9" target="_blank">Impact Hub Dakar</a>
 		</p>
 
 		<div class="mt-8">
