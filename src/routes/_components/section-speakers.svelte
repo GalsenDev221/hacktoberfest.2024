@@ -21,8 +21,8 @@
 		{#each speakers as speaker, i (i)}
 			<li>
 				<figure>
-					<div class="relative aspect-video overflow-hidden rounded-lg sm:aspect-square">
-						<img src={speaker.photo} alt={speaker.name} class="h-full w-full object-cover" />
+					<div class="relative aspect-square overflow-hidden rounded-lg sm:aspect-square">
+						<img src={speaker.photo} alt={speaker.name} class="h-auto w-full object-cover" />
 						<div
 							class="absolute inset-0 bg-gradient-to-t from-black/90 opacity-0 transition-opacity duration-500 hover:opacity-100"
 						>
@@ -43,7 +43,7 @@
 						<h3 class="truncate text-lg font-medium leading-none" title={speaker.name}>
 							{speaker.name}
 						</h3>
-						<p title={speaker.role} class="truncate text-green">{speaker.role}</p>
+						<p title={speaker.role} class="truncate text-sm text-green">{speaker.role}</p>
 					</figcaption>
 				</figure>
 			</li>
