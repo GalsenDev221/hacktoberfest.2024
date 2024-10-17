@@ -32,9 +32,9 @@
 	<h2 class="sr-only">Countdown</h2>
 
 	{#if isPastDue}
-		<p>LFG</p>
+		<p>Let's go !</p>
 	{:else}
-		<dl class="flex items-start justify-center gap-5 lg:justify-start">
+		<dl class="flex items-start justify-center gap-3 lg:justify-start">
 			{#each countdownMap as { label, value }, i (i)}
 				<div class="space-y-1 text-center">
 					<dt class="text-4xl font-medium text-white">{value.toString().padStart(2, '0')}</dt>

@@ -1,3 +1,7 @@
+<script lang="ts">
+	import ArrowLink from '$lib/components/icons/arrow-link.svelte';
+</script>
+
 <section class="relative my-10 bg-green">
 	<div class="absolute inset-x-0 h-[140px] bg-black sm:h-[225px] lg:h-20"></div>
 	<div class="absolute inset-x-0 bottom-0 bg-black lg:h-20"></div>
@@ -20,6 +24,10 @@
 				démonstrations interactives, animées par des experts issus de divers domaines.
 				<br />
 				Inscrivez-vous dès maintenant pour ne rien manquer !
+			</p>
+			<p class="mt-2 inline-flex items-center gap-2 text-black hover:underline">
+				<ArrowLink />
+				<a href="https://hacktoberfest.com" target="_blank">Site web Hacktoberfest</a>
 			</p>
 		</div>
 	</div>
