@@ -16,7 +16,7 @@ export const load: PageLoad = () => {
 		{
 			photo: 'speakers/ousseynou.diop.webp',
 			name: 'Ousseynou DIOP',
-			role: 'CEO Xarala.',
+			role: 'Développeur FullStack & CEO Xarala.',
 			socials: [
 				{ name: 'twitter', href: 'https://x.com/xarala221' },
 				{ name: 'linkedin', href: 'https://linkedin.com/in/xarala221' },
@@ -55,7 +55,7 @@ export const load: PageLoad = () => {
 		{
 			photo: 'speakers/libasse.thiam.webp',
 			name: 'Libasse THIAM',
-			role: 'Développeur FullStack.',
+			role: 'Développeur FullStack & cofondateur Wommate.',
 			socials: [
 				{ name: 'linkedin', href: 'https://linkedin.com/in/libscode' },
 				{ name: 'github', href: 'https://github.com/lmtlibass' }
@@ -76,15 +76,41 @@ export const load: PageLoad = () => {
 	const schedule: Schedule[] = [
 		{ title: 'Accueil et mise en place', time: '09:30 - 10:00' },
 
-		{ title: 'Hack Session', time: '10:00 - 11:30', speaker: 'Daooda' },
-		{ title: 'Premier Talk', time: '11:30 - 12:45', speaker: 'Daooda' },
-		{ title: 'Deuxieme talk', time: '12:45 - 14:00', speaker: 'Daooda' },
+		{
+			title: 'Hack Session : Comment réussir son Hacktoberfest',
+			time: '10:00 - 11:00',
+			speaker: 'Daouda BA'
+		},
+		{
+			title: 'Présentation du projet "GUi" !?',
+			time: '11:00 - 11:30',
+			speaker: 'Moussa Alkaly BADJI & Papa Elhadji Abdoulaye NDOYE'
+		},
+		{
+			title: 'Comment se former en autodidacte et trouver son premier emploi ?',
+			time: '11:30 - 12:00',
+			speaker: 'Ousseynou DIOP'
+		},
+		{
+			title: "Qiskit : L'informatique quantique open source à grande échelle",
+			time: '12:00 - 13:00',
+			speaker: 'Libasse THIAM'
+		},
+		{
+			title: 'Stress & GitHub Education',
+			time: '13:00 - 14:00',
+			speaker: 'Médoune Siby Georges BALDE'
+		},
 
-		{ title: 'Pause dejeuner', time: '14:00 - 14:45' },
+		{ title: 'Pause & collation time.', time: '14:00 - 14:30' },
 
-		{ title: 'Atelier', time: '15:00 - 16:00', speaker: 'Medoune Siby G. BALDE' },
-		{ title: 'Troisieme Talk', time: '11:30 - 12:45', speaker: 'Papa Elhadj Abdoulaye NDOYE' },
-		{ title: 'Séance photo de famille', time: '17:30' }
+		{ title: 'Sponsor Talk', time: '14:30 - 15:00', speaker: 'Socium Team' },
+		{
+			title: 'À la découverte de Coolify : le CI/CD simplifié',
+			time: '15:00 - 15:45',
+			speaker: 'Mouhamed GUEYE'
+		},
+		{ title: 'Mot de la fin & photo de famille', time: '16:00' }
 	];
 
 	return {
