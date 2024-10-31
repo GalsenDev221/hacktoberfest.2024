@@ -1,15 +1,15 @@
 <script lang="ts">
 	import '../app.css';
 	import Logo from '$lib/components/icons/logo.svelte';
-	import type { LayoutData } from './$types';
 
-	export let data: LayoutData;
-	$: ({ eventURL } = data);
+	// import type { LayoutData } from './$types';
+	// export let data: LayoutData;
+	// $: ({ eventURL } = data);
 </script>
 
 <svelte:head>
 	<title>Hacktoberfest 2024 | Galsen DEV</title>
-	<script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script>
+	<!-- <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script> -->
 
 	<!-- OG Meta Tags -->
 	<meta property="og:url" content="https://hfest24.galsen.dev" />
@@ -46,11 +46,11 @@
 		<Logo />
 
 		<a
-			href={eventURL}
+			href="https://galsen.dev/events/hacktoberfest-2024"
 			target="_blank"
 			class="text-dark bg-green px-5 py-3 font-medium text-black hover:bg-green-light"
 		>
-			Participer
+			Voir
 		</a>
 	</nav>
 </header>
